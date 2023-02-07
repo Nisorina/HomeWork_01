@@ -6,12 +6,13 @@ import java.lang.Thread.sleep
  - Реализуйте функцию высшего порядка, которая вычисляет время выполнения функции-аргумента
    и возвращает результат в миллисекундах */
 
-fun calculateTimeMillis(action: () -> Unit): Long {
+fun calculateTimeMs(action: () -> Unit): Long {
     val start = System.currentTimeMillis()
     action()
     return System.currentTimeMillis() - start
 }
 
 fun main() {
-    println(calculateTimeMillis { sleep(200) })
+    val time = calculateTimeMs{ sleep(200) }
+    println("Время выполнения: $time мс")
 }
