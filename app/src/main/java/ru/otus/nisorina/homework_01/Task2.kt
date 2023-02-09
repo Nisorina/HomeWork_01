@@ -13,7 +13,7 @@ class Person(val surname: String, val name: String, val age: Int) {
 }
 
 fun List<Person>.sortByAge() = sortedByDescending { it.age }
-fun List<Person>.sortByName() = sortedBy { it.name }.sortedBy { it.surname }
+fun List<Person>.sortByName() = sortedBy { it.surname }.sortedBy { it.name }
 
 fun main() {
     val persons = listOf(
@@ -21,6 +21,7 @@ fun main() {
         Person("Сергеев", "Сергей", 21),
         Person("Петров", "Петр", 38),
         Person("Алехин", "Иван", 15),
+        Person("Булкин", "Сергей", 45),
     )
     println("По возрасту:")
     persons.sortByAge().forEach { println(it) }
